@@ -5,13 +5,13 @@ import random
 import json
 import spacy
 from transformers import BertTokenizer
-
+nlp = spacy.load("en_core_web_sm")
 validity2id = {'none': 0, 'positive': 1, 'negative': 1, 'neutral': 1}
 sentiment2id = {'none': 0, 'positive': 1, 'negative': 2, 'neutral': 3}
 
 def adj_dependcy_tree(args, argments, max_length):
     # nlp = spacy.load('en')
-    nlp = spacy.load("en_core_web_sm")
+    
     depend = []
     depend1 = []
     doc = nlp(str(argments))  # doc表示当前的sentence
